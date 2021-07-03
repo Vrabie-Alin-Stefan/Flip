@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Flip/Application.h"
-
+#include "Flip/Log.h"
 
 //---------Entry Point-----------------
 

@@ -1,0 +1,3 @@
+[submodule "Flip/vendor/spdlog"]
+	path = Flip/vendor/spdlog
+	url = https://github.com/gabime/spdlog
