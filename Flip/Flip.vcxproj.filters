@@ -7,6 +7,12 @@
     <Filter Include="Flip\Events">
       <UniqueIdentifier>{54B98506-C06E-FEFB-4963-F8D2B517F5FF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platforms">
+      <UniqueIdentifier>{DDACA145-4917-56BC-9255-0762FEFE3311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\Windows">
+      <UniqueIdentifier>{17E40808-83FA-069E-CC71-92BF38C7D725}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Flip.h" />
@@ -31,8 +37,20 @@
     <ClInclude Include="src\Flip\Events\MouseEvent.h">
       <Filter>Flip\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Flip\Layer.h">
+      <Filter>Flip</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flip\LayerStack.h">
+      <Filter>Flip</Filter>
+    </ClInclude>
     <ClInclude Include="src\Flip\Log.h">
       <Filter>Flip</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flip\Window.h">
+      <Filter>Flip</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platforms\Windows\WindowsWindow.h">
+      <Filter>Platforms\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\fppch.h" />
   </ItemGroup>
@@ -40,8 +58,17 @@
     <ClCompile Include="src\Flip\Application.cpp">
       <Filter>Flip</Filter>
     </ClCompile>
+    <ClCompile Include="src\Flip\Layer.cpp">
+      <Filter>Flip</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flip\LayerStack.cpp">
+      <Filter>Flip</Filter>
+    </ClCompile>
     <ClCompile Include="src\Flip\Log.cpp">
       <Filter>Flip</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platforms\Windows\WindowsWindow.cpp">
+      <Filter>Platforms\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\fppch.cpp" />
   </ItemGroup>

@@ -1,5 +1,4 @@
 #include "fppch.h"
-#include "Log.h"
 
 namespace Flip {
 	

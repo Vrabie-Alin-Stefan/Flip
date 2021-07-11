@@ -26,6 +26,7 @@ namespace Flip {
 #define FP_CORE_INFO(...)		::Flip::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define FP_CORE_TRACE(...)		::Flip::Log::GetCoreLogger()->trace(__VA_ARGS__)
 
+
 //Client log macros
 #define FP_FATAL(...)		::Flip::Log::GetClientLogger()->fatal(__VA_ARGS__)
 #define FP_ERROR(...)		::Flip::Log::GetClientLogger()->error(__VA_ARGS__)

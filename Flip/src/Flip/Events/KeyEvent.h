@@ -52,4 +52,5 @@ namespace Flip {
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
 }

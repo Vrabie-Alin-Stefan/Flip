@@ -10,6 +10,14 @@ workspace "Flip"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Flip/vendor/GLFW/include"
+IncludeDir["Glad"] = "Flip/vendor/Glad/include"
+
+include "Flip/vendor/GLFW"
+include "Flip/vendor/Glad"
+
 project "Flip"
 	location "Flip"
 	kind "SharedLib"
@@ -30,7 +38,16 @@ project "Flip"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
+	}
+
+	links 
+	{ 
+		"GLFW",
+		"Glad",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -41,7 +58,8 @@ project "Flip"
 		defines
 		{
 			"FP_PLATFORM_WINDOWS",
-			"FP_BUILD_DLL"
+			"FP_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -51,15 +69,18 @@ project "Flip"
 
 		filter "configurations:Debug"
 			defines "FP_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "FP_RELEASE"
+			buildoptions "/MD"
 			symbols "On"
 
 
 		filter "configurations:dist"
 			defines "FP_DIST"
+			buildoptions "/MD"
 			symbols "On"
 
 project "Sandbox"
@@ -100,13 +121,16 @@ project "Sandbox"
 
 		filter "configurations:Debug"
 			defines "FP_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "FP_RELEASE"
+			buildoptions "/MD"
 			symbols "On"
 
 
 		filter "configurations:dist"
 			defines "FP_DIST"
+			buildoptions "/MD"
 			symbols "On"
